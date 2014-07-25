@@ -26,17 +26,19 @@
       <input type="password" name="password"/>
     </p>
     <p> Please select which company you prefer:
-        <input type="radio" name="pet" value="dog" /> Dog
-        <input type="radio" name="pet" value="cat" /> Cat
+        <input type="radio" name="pet" value="dog" id="dog" /> Dog
+        <input type="radio" name="pet" value="cat" id="cat" /> Cat
     </p>
     
   <script type="text/javascript">
-    if (value="cat"){
-    alert("Wrong choice!");}
+    var catEl = document.getElementById("cat");
+    catEl.onclick = function(){
+      alert("Wrong choice!");
+    };
   </script>
   
     <p> Please provide a good story: </p> 
-      <textarea name="story" cols="20" rows="4"> Enter your moving tale...</textarea>
+      <textarea name="story" cols="20" rows="4" placeholder ="Enter your moving tale..." ></textarea>
       
     <p> Do you like this site:
         <input type="checkbox" name="service" value="yes" checked="checked" /> Yes
