@@ -42,15 +42,16 @@
       
     <p> Do you like this site:
         <input type="checkbox" name="service" value="yes" checked="checked" /> Yes
-        <input type="checkbox" names="service" value="no" id="noServ" /> No
+        <input type="checkbox" names="service" value="no" id="no" /> No
     </p>
     
     <script type="text/javascript">
-      var noServiceEl = document.getElementById("noServ")
+      var noServiceEl = document.getElementById("no")
       noServiceEl.onclick = function(){
         alert("D':");
       };
     </script>
+    
     <p> Are you embarrassing:</p>
     <select name="trait">
       <option value="definitely"> Definitely </option>
