@@ -12,8 +12,8 @@
   
   <p> <a href="mailto:yw1hbmk@gmail.com"> Email ATG</a></p>
   
-  <figure id="cutey-dog">
-    <img src="http://blogabove.com/wp-content/uploads/border-collie-german-shepherd-mix-5.jpg" alt="really cute dog" width="600" height="450" title = "cute(r than you) dog"/>
+  <figure>
+    <img src="http://blogabove.com/wp-content/uploads/border-collie-german-shepherd-mix-5.jpg" alt="really cute dog" width="600" height="450" title = "cute(r than you) dog" id="cutey-dog"/>
     <figcaption> Fact: dogs do not add extra responsibility to your life. </figcaption>
   </figure>  
   
@@ -25,15 +25,16 @@
       request.responseType = "arraybuffer";
       request.onload = function(){
         audioContext.decodeAudioData(request.response, function(buffer){
-          window.source = audioContext.createBufferSource();
-          source.buffer = buffer;
-          source.connect(audioContext.destination);
+          window.bark = buffer;
         });
       }
       request.send();
     })();
     var cuteyEl = document.getElementById("cutey-dog");
     cuteyEl.onmouseover = function(){
+      var source = audioContext.createBufferSource();
+      source.buffer = bark;
+      source.connect(audioContext.destination);
       source.start(0);
     }
   </script>
