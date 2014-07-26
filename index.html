@@ -28,7 +28,7 @@
           // barking = buffer; 
           source = audioContext.createBufferSource();
           source.buffer = buffer;
-          source.connect(context.destination);
+          source.connect(audioContext.destination);
           source.start(0);
         });
       }
