@@ -24,13 +24,13 @@
       request.open("GET", "woofwoof2.mp3", true);
       request.responseType = "arraybuffer";
       request.onload = function(){
-        audioContext.decodeAudioData(request.response(function(buffer){
+        audioContext.decodeAudioData(request.response, function(buffer){
           // barking = buffer; 
           source = audioContext.createBufferSource();
           source.buffer = buffer;
           source.connect(context.destination);
           source.start(0);
-        }));
+        });
       }
       request.send();
     }
