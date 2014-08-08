@@ -1,7 +1,4 @@
-p {
+body {
   color: red;
-}
-
-a {
-  color: blue;
+  font-size: 14px;
 }
