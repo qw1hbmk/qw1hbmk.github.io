@@ -1,5 +1,122 @@
 body {
-  color: yellow;
-  font-size: 14px;
-  background-color: blue;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+    color: black;
+    background-color: #ffc;
+    margin: 20px;
+    padding: 0;
+}
+
+/* This is a comment, by the way */
+
+/* #rabbit { background: hsla(0, 75%, 75%, 0.5) } */
+
+/* @import --add another style sheet */
+/*@media screen, projection { } --can be used to target smaller screens */
+
+
+p {
+    line-height: 21px;
+}
+
+h1 {
+    color: #ffc;
+    background-color: #900;
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: 7px;
+    padding: 4px;
+    font-style: italic;
+    text-align: center;
+    letter-spacing: 0.5em;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5em;
+    border-bottom-color: #c00;
+}
+
+h2 {
+    color: white;
+    background-color: #090;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 2px;
+    padding-left: 14px;
+}
+
+h3 {
+    color: #999;
+    font-size: 1.25em;
+}
+
+img {
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #ccc;
+}
+
+a {
+    text-decoration: none;
+}
+
+strong {
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+li {
+    color: #900;
+    font-style: italic;
+}
+
+table {
+    background-color: #ccc;
+}
+
+
+@font-face {
+    font-family: "font of all knowledge";
+    src: url(fontofallknowledge.woff);
+}
+
+
+p { font-family: "font of all knowledge", arial, sans-serif; }
+
+abbr[title] { border-bottom: 1px dotted #ccc }
+/* This basically says “shove a dotted line underneath all abbreviations with a title attribute”. */
+
+With the attribute…
+
+Appending an attribute name enclosed in square brackets, to style something that simply contains a certain attribute, you can do something like this:
+
+
+abbr[title] { border-bottom: 1px dotted #ccc }
+This basically says “shove a dotted line underneath all abbreviations with a title attribute”.
+
+With the attribute and its value…
+
+You can further specify that you want to style something with a specific attribute value.
+
+
+input[type=text] { width: 200px; }
+This example will apply a width of 200 pixels only to input elements that are specified as being text boxes (<input type="text">).
+
+This approach can certainly be useful in forms where input elements can take on many guises using the type attribute.
+
+You can also target more than one attribute at a time in a way similar to the following:
+
+
+input[type=text][disabled] { border: 1px solid #ccc }
+This will only apply a gray border to text inputs that are disabled.
+
+CSS 3 further allows you to match an attribute without being exact:
+
+[attribute^=something] will match a the value of an attribute that begins with something.
+[attribute$=something] will match a the value of an attribute that ends with something.
+[attribute*=something] will match a the value of an attribute that contains something, be it in the beginning, middle, or end.
+So, as an example, you could style external links (eg. “http://www.htmldog.com”) differently to internal links (eg. “overhere.html”) in the following way:
+
+
+a[href^=http] {
+    padding-right: 10px;
+    background: url(arrow.png) right no-repeat;
 }
